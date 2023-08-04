@@ -31,17 +31,18 @@ module.exports = ({version, url, size, downloadPath}) => new Promise(async (res,
         
         let totalData = 0;
     
-        pt.on(`data`, d => {
+        /*pt.on(`data`, d => {
             const progress = (totalData += Buffer.byteLength(d)) / size;
             console.log(`[downloadClient]: Downloading ${(progress*100).toFixed(2)}% (${totalData} / ${size})`);
-        })
+        })*/
 
         //writeStream.on(`close`, () => res());
     
         writeStream.on(`finish`, () => res());
     
-        pt.pipe(writeStream);
-        req.pipe(pt);
+        //pt.pipe(writeStream);
+        //req.pipe(pt);
+        req.pipe(writeStream);
     } catch(e) {
         console.error(e)
         rej(e);

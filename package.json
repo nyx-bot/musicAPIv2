@@ -1,8 +1,8 @@
 {
   "dependencies": {
+    "adm-zip": "^0.5.10",
     "fastify": "^4.21.0",
-    "superagent": "^8.0.9",
-    "unzipper": "^0.10.14"
+    "superagent": "^8.0.9"
   },
   "name": "musicAPIv2",
   "description": "Nyx's music services V2",
